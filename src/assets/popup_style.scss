@@ -1,0 +1,361 @@
+@import "vars.scss";
+@import "nullstyle.scss";
+
+.general__component {
+    position: absolute;
+    background-color: $popupColor;
+    width: $widthPopup;
+    height: $heightPopup;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $borderRadiusPopup;
+    box-shadow: 0px 8px 20px rgba(68, 75, 77, 0.15);
+    // translate: translateX(-50%) translateY(100vw);
+
+    .decoration__component {
+        position: absolute;
+        background-color: $popupColor;
+        width: 581px;
+        height: 502px;
+        left: 283px;
+        top: 0px;
+        border-radius: 0 10px 10px 0;
+        overflow: hidden;
+        z-index: 10;
+
+        .close__component {
+            cursor: pointer;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 559px;
+            top: 12px;
+            z-index:7;
+            background-color: $popupColor;
+
+            span::after, span::before {  
+                content: ""; 
+                height: 12px;
+                left: 5px;
+                position: absolute;
+                border: 1px solid #2F3639; 
+            }
+
+            span::after {
+                transform: rotate(45deg);
+            }
+
+            span::before {
+                transform: rotate(-45deg);
+            }
+            
+        }
+
+        .image__component {
+            position: absolute;
+            
+            width: 403px;
+            height: 764px;
+            left: 150px;
+            top: -180px;
+            background-color: red;
+            transform: rotate(-30deg);
+            overflow: hidden;
+
+            .img {
+                width: 787.12px;
+                height: 923px;
+                left: -285.5px;
+                top: 166.5px;
+                position: absolute;
+                background-image: url('@/assets/image.png');
+                transform: rotate(30deg);
+            }
+        }
+
+        .purple__rectangle__1 {
+            position: absolute;
+            width: 224px;
+            height: 887.96px;
+            left: 170px;
+            top: -100.02px;
+            background: $rectangleColor;
+            transform: rotate(-15deg);
+        }
+
+        .purple__rectangle__2 {  
+            position: absolute;
+            width: 224px;
+            height: 887.96px;
+            left: 332px;
+            top: -228.02px;
+            background: $rectangleColor;
+            transform: rotate(-15deg);
+            // z-index:4;
+        }
+    }
+
+    .form__component {
+        display: flex;
+        flex-direction: column;
+
+        .procents__num {
+            // position: absolute;
+
+            h1, h3 {
+                position: absolute;
+                width: 416px;
+                height: 104px;
+                font-family: $formFont;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%;
+                color: #2F3639;
+                background-color: $popupColor;
+            }
+
+            h1 {
+                left: 32px;
+                top: 40px;
+                font-size: 104px;
+                z-index: 5;
+            }
+            
+            h3 {
+                left: 232px;
+                top: 30px;
+                font-size: 23px;
+                z-index: 6;
+                display:flex;
+                align-items: flex-end;
+            }
+        }
+
+        .order__description {   
+            position: absolute;
+            top: 170px;
+            left: 40px;
+            width: 416px;
+            height: 24px;
+            font-family: $formFont;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 100%;
+            color: #828688;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            background-color: $popupColor;
+
+            h1 {
+                background-color: $popupColor;
+            }
+
+            .purple__rectangle__3 {
+                position: absolute;
+                width: 67px;
+                height: 2px;
+                top: 40px;
+                background: $rectangleColor;
+                border-radius: 10px;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+            }
+
+            span {
+                position: absolute;
+                width: 373px;
+                height: 34px;
+                top: 65px;
+                font-family: $formFont;
+                font-style: light;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 120%;
+                align-items: center;
+                color: #595E61;
+                z-index: 100;
+                background-color: $popupColor;
+            }
+        }
+
+        .email__form__component {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 8px;
+            padding: 0px;
+            gap: 16px;
+            position: absolute;
+            width: 320px;
+            height: 150px;
+            left: 32px;
+            top: 312px;
+            background-color: $popupColor;
+            z-index: 30;
+
+            form {
+                background-color: $popupColor;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    width: 90px;
+                    height: 14px;
+                    font-family: $formFont;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #828688;
+                    background-color: $popupColor;
+                }
+    
+                input[type="email"] {
+                    box-sizing: border-box;
+                    margin-top: 10px;
+                    padding: 10px;
+                    width: 302px;
+                    height: 40px;
+                    background: $popupColor;
+                    border: 1px solid #D5D7D7;
+                    border-radius: 6px;
+                    transition: 0.5s;
+                    font-family: $formFont;
+                    color: #595E61;
+
+                    &:focus {
+                        outline: none;
+                        border: 1px solid $rectangleColor;
+                    }
+                }
+
+                button {
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 18px;
+                    gap: 10px;
+                    width: 106px;
+                    height: 40px;
+                    background: $rectangleColor;
+                    border: none;
+                    border-radius: 35px;
+                    color: white;
+                }
+                
+                .checkbox__component {
+                    background-color: $popupColor;
+                    margin-top: 12px;
+                    position: relative;
+
+                    .checkbox__input {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        position: absolute;
+                    }
+
+                    label {
+                        width: 177px;
+                        height: 16px;
+                        margin-left: 20px;
+                        font-family: $formFont;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        background-color: $popupColor;
+                        color: #595E61;
+                        cursor: pointer;
+
+                        &:before {
+                            content: '';
+                            width: 11px;
+                            height: 11px;
+                            border: 2px solid $rectangleColor;
+                            background-color: $popupColor;
+                            border-radius: 3px;
+                            position: absolute;
+                            left: -1px;
+                            top: 2px;
+                            z-index: 31;
+                            transition: background .1s linear, border .1s linear;
+                        }
+
+                        &:after {
+                            content: "";
+                            display: block;
+                            width: 8px;
+                            height: 8px;
+                            background-color: $rectangleColor;
+                            // background-size: 7px 7px;
+                            border-radius: 2px;
+                            opacity: 0;
+                            position: absolute;
+                            left: 2.5px;
+                            top: 5.5px;
+                            z-index: 32;
+                            transition: opacity .2s linear;
+                            transform: scale(0);
+                            -webkit-transform: scale(0);
+                            transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+                            -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+                        }
+                    }  
+                    
+                    .checkbox__input:checked + label:after {
+                        opacity: 1;
+                        transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+                        -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                    }
+                }
+                
+            }
+
+           
+        }
+       
+        
+    }
+
+
+    
+}
+
+.pop-enter-from {
+    opacity: 0;
+    transition: opacity .2s linear;
+    transition: all 0.2s cubic-bezier(1, 0, 0.4, 0.5);
+    -webkit-transition: all 0.2s cubic-bezier(1, 0, 0.4, 0.5);
+}
+
+.pop-enter-to {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
+    -webkit-transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
+}
+
+.pop-enter-active {
+    transition: all 0.4s ease;
+}
+
+.pop-leave-from {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
+    -webkit-transition: all 0.2s cubic-bezier(1, 0, 0.4, 1);
+}
+
+.pop-leave-to {
+    opacity: 0;
+    transition: opacity .2s linear;
+    transition: all 0.2s cubic-bezier(1, 0, 0.4, 0.5);
+    -webkit-transition: all 0.2s cubic-bezier(1, 0, 0.4, 0.5);
+}
+
+.pop-leave-active {
+    transition: all 0.4s ease;
+}

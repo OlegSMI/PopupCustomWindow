@@ -1,0 +1,58 @@
+@import "vars.scss";
+@import "nullstyle.scss";
+
+.flash_message__component {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-family: $formFont;
+    font-size: 18px;
+    transition: left .2s linear;
+    z-index:999;
+    opacity: 0;
+}
+
+.error {
+    background: rgba(222, 44, 44, 0.3);
+    opacity: 1;
+    
+}
+
+.success {
+    background: rgba(20, 135, 39, 0.3);
+    opacity: 1;
+}
+
+
+.flash-enter-from {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.flash-enter-to {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flash-enter-active {
+    transition: all 0.8s ease;
+}
+
+.flash-leave-from {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flash-leave-to {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.flash-leave-active {
+    transition: all 0.8s ease;
+}

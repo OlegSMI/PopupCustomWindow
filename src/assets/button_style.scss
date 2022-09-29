@@ -1,0 +1,29 @@
+@import "vars.scss";
+@import "nullstyle.scss";
+@import "flashmessage_style.scss";
+
+.open_popup__component {
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-family: $formFont;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    background: $rectangleColor;
+    border: none;
+    border-radius: 35px;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+    z-index: -1;
+
+    &:hover {
+        padding: 12px;
+        font-size: 21px;
+        box-shadow: 0px 8px 20px rgba(68, 75, 77, 0.15);
+    }
+
+}
